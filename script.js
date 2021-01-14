@@ -1,8 +1,15 @@
 // Dependencies ===============================
+
 // Starting Data ==============================
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+// list of numbers, characters, and special characters
+const numberList = '0123456789';
+const uppercaseList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lowercaseList = 'abcdefghijklmnopqrstuvwxyz';
+const specialCharactersList = ' !"#$%&()*+,~./:;<>=?@[]^_`{}|-\'\\';
 
 // User Inputs ================================
 function getParameters() {
