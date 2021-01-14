@@ -14,47 +14,69 @@ const specialCharactersList = " !\"#$%&()*+,~./:;<>=?@[]^_`{}|-'\\";
 
 // User Inputs ================================
 
-function getParameters() {
-  // ask the user how long they want the password
-  let passwordLength = prompt(
-    "How long would you like your password to be? (Min. 8 Characters)"
-  );
+// ask the user how long they want the password
+let passwordLength = prompt(
+  "How long would you like your password to be? (Min. 8 Characters)"
+);
+passwordLength = parseInt(passwordLength);
 
-  // do they want SVGAnimatedNumberList
-  let includeNumbers = confirm(
-    "Would you like to include numbers in your password?"
-  );
+// do they want SVGAnimatedNumberList
+let includeNumbers = confirm(
+  "Would you like to include numbers in your password?"
+);
 
-  // do they want lowercase letters
-  let includeLowerCaseLetters = confirm(
-    "Would you like to include lowercase letters in your password?"
-  );
+// do they want lowercase letters
+let includeLowerCaseLetters = confirm(
+  "Would you like to include lowercase letters in your password?"
+);
 
-  // do they want uppercase letters
-  let includeUpperCaseLetters = confirm(
-    "Would you like to include uppercase letters in your password?"
-  );
+// do they want uppercase letters
+let includeUpperCaseLetters = confirm(
+  "Would you like to include uppercase letters in your password?"
+);
 
-  //do they want special characters?
-  let includeSpecialCharacters = confirm(
-    "Would you like to include special characters in your password?"
-  );
-}
+//do they want special characters?
+let includeSpecialCharacters = confirm(
+  "Would you like to include special characters in your password?"
+);
 
 // Functions ==================================
+// place the random characters in the password until we have a password at the specified length
+for (let i = 0; i < passwordLength; i++) {}
+
 function generatePassword() {
-  let numChoice = numberList.charAt(
-    Math.floor(Math.random() * numberList.length)
-  );
-  let uppercaseChoice = uppercaseList.charAt(
-    Math.floor(Math.random() * uppercaseList.length)
-  );
-  let lowercaseChoice = lowercaseList.charAt(
-    Math.floor(Math.random() * lowercaseList.length)
-  );
-  let specialChoice = specialCharactersList.charAt(
-    Math.floor(Math.random() * specialCharactersList.length)
-  );
+  if (
+    includeNumbers &&
+    includeLowerCaseLetters &&
+    includeUpperCaseLetters &&
+    includeSpecialCharacters
+  ) {
+  } else if (
+    includeLowerCaseLetters &&
+    includeUpperCaseLetters &&
+    includeSpecialCharacters
+  ) {
+  } else if (
+    ncludeNumbers &&
+    includeLowerCaseLetters &&
+    includeSpecialCharacters
+  ) {
+  } else if (
+    includeNumbers &&
+    includeUpperCaseLetters &&
+    includeSpecialCharacters
+  ) {
+  } else if (includeNumbers && includeLowerCaseLetters) {
+  } else if (includeLowerCaseLetters && includeUpperCaseLetters) {
+  } else if (includeUpperCaseLetters && includeSpecialCharacters) {
+  } else if (includeNumbers && includeSpecialCharacters) {
+  } else if (includeNumbers && includeUpperCaseLetters) {
+  } else if (includeLowerCaseLetters && includeSpecialCharacters) {
+  } else if (includeNumbers) {
+  } else if (includeLowerCaseLetters) {
+  } else if (includeUpperCaseLetters) {
+  } else {
+  }
 }
 
 // Write password to the #password input
@@ -73,11 +95,20 @@ var passwordText = document.querySelector("#password");
 // getParameters();
 
 // to do ==========================================
-// randomly grab characters from the character set
-//let compChoice = compChoices.charAt(Math.floor(Math.random() * 3));
-// place the random characters in the password until we have a password at the specified length
 // Add event listener to generate button
 //generateBtn.addEventListener("click", writePassword);
+// randomly grab characters from the character set
+// let numChoice = numberList.charAt(
+//   Math.floor(Math.random() * numberList.length)
+// );
+// let uppercaseChoice = uppercaseList.charAt(
+//   Math.floor(Math.random() * uppercaseList.length)
+// );
+// let lowercaseChoice = lowercaseList.charAt(
+//   Math.floor(Math.random() * lowercaseList.length)
+// );
+// let specialChoice = specialCharactersList.charAt(
+//   Math.floor(Math.random() * specialCharactersList.length)
+// );
 
 // debugging =======================================
-generatePassword();
