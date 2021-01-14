@@ -41,8 +41,37 @@ let includeSpecialCharacters = confirm(
 );
 
 // Functions ==================================
-// place the random characters in the password until we have a password at the specified length
-for (let i = 0; i < passwordLength; i++) {}
+// pick a random number
+function randomNumber() {
+  let numChoice = numberList.charAt(
+    Math.floor(Math.random() * numberList.length)
+  );
+  return numChoice;
+}
+
+// pick a random lowercase letter
+function randomLowerCase() {
+  let lowercaseChoice = lowercaseList.charAt(
+    Math.floor(Math.random() * lowercaseList.length)
+  );
+  return lowercaseChoice;
+}
+
+// pick a random uppercase letter
+function randomUpperCase() {
+  let uppercaseChoice = uppercaseList.charAt(
+    Math.floor(Math.random() * uppercaseList.length)
+  );
+  return uppercaseChoice;
+}
+
+// pick a random special character
+function randomSpecial() {
+  let specialChoice = specialCharactersList.charAt(
+    Math.floor(Math.random() * specialCharactersList.length)
+  );
+  return specialChoice;
+}
 
 function generatePassword() {
   if (
@@ -57,7 +86,7 @@ function generatePassword() {
     includeSpecialCharacters
   ) {
   } else if (
-    ncludeNumbers &&
+    includeNumbers &&
     includeLowerCaseLetters &&
     includeSpecialCharacters
   ) {
@@ -75,7 +104,9 @@ function generatePassword() {
   } else if (includeNumbers) {
   } else if (includeLowerCaseLetters) {
   } else if (includeUpperCaseLetters) {
+  } else if (includeSpecialCharacters) {
   } else {
+    alert("You haven't selected anything for your password!");
   }
 }
 
@@ -95,12 +126,14 @@ var passwordText = document.querySelector("#password");
 // getParameters();
 
 // to do ==========================================
+// place the random characters in the password until we have a password at the specified length
 // Add event listener to generate button
 //generateBtn.addEventListener("click", writePassword);
 // randomly grab characters from the character set
 // let numChoice = numberList.charAt(
 //   Math.floor(Math.random() * numberList.length)
 // );
+// i++
 // let uppercaseChoice = uppercaseList.charAt(
 //   Math.floor(Math.random() * uppercaseList.length)
 // );
@@ -112,3 +145,30 @@ var passwordText = document.querySelector("#password");
 // );
 
 // debugging =======================================
+// let i = 0;
+// let newPassword = [];
+// while (i < passwordLength) {
+//   let numChoice = numberList.charAt(
+//     Math.floor(Math.random() * numberList.length)
+//   );
+//   newPassword.push(numChoice);
+//   i++;
+//   let uppercaseChoice = uppercaseList.charAt(
+//     Math.floor(Math.random() * uppercaseList.length)
+//   );
+//   newPassword.push(uppercaseChoice);
+//   i++;
+//   let lowercaseChoice = lowercaseList.charAt(
+//     Math.floor(Math.random() * lowercaseList.length)
+//   );
+//   newPassword.push(lowercaseChoice);
+//   i++;
+//   let specialChoice = specialCharactersList.charAt(
+//     Math.floor(Math.random() * specialCharactersList.length)
+//   );
+//   newPassword.push(specialChoice);
+//   i++;
+// }
+// newPassword = newPassword.join("");
+// newPassword = newPassword.toString();
+// console.log(newPassword);
