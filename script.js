@@ -21,6 +21,12 @@ function generatePassword() {
     "How long would you like your password to be? (Min. 8 Characters)"
   );
   passwordLength = parseInt(passwordLength);
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert(
+      "Please create a password at least 8 characters and less than 128 characters long"
+    );
+    generatePassword();
+  }
 
   // do they want SVGAnimatedNumberList
   let includeNumbers = confirm(
@@ -54,6 +60,15 @@ function generatePassword() {
   }
   if (includeSpecialCharacters) {
     fullString += specialCharactersList;
+  }
+  if (
+    !includeNumbers &&
+    !includeLowerCaseLetters &&
+    !includeUpperCaseLetters &&
+    !includeSpecialCharacters
+  ) {
+    alert("You have not selected anything, please try again!");
+    generatePassword();
   }
 
   // section that randomly grabs characters from the concatinated full string
