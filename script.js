@@ -42,33 +42,41 @@ let includeSpecialCharacters = confirm(
   "Would you like to include special characters in your password?"
 );
 
-// Functions ==================================
-
+// a section to concatinate based on user inputs
 if (includeNumbers) {
   fullString = numberList;
 }
 if (includeLowerCaseLetters) {
-  fullString += includeLowerCaseLetters;
+  fullString += uppercaseList;
 }
 if (includeUpperCaseLetters) {
-  fullString += includeUpperCaseLetters;
+  fullString += lowercaseList;
 }
 if (includeSpecialCharacters) {
-  fullString += includeSpecialCharacters;
+  fullString += specialCharactersList;
 }
 
-function generatePassword(length) {
-  if (
-    includeNumbers &&
-    includeLowerCaseLetters &&
-    includeUpperCaseLetters &&
-    includeSpecialCharacters
-  ) {
-    for (let i = 0; i < passwordLength; i++) {
-      newPassword += fullString.charAt(
-        Math.floor(Math.random() * fullString.length)
-      );
-    }
-    return newPassword;
+// Functions ==================================
+function generatePassword() {
+  for (let i = 0; i < passwordLength; i++) {
+    newPassword += fullString.charAt(
+      Math.floor(Math.random() * fullString.length)
+    );
   }
+  return newPassword;
 }
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+  // return password
+  passwordText.placeholder = passwordText.value;
+}
+
+var passwordText = document.querySelector("#password");
+
+// Initialize =====================================
+// writePassword();
