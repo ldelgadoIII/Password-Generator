@@ -2,7 +2,6 @@
 // Starting Data ==============================
 
 // Assignment Code
-
 var generateBtn = document.querySelector("#generate");
 
 // build a character set containing the users choices
@@ -91,6 +90,3 @@ function writePassword() {
 }
 
 var passwordText = document.querySelector("#password");
-
-// Initialize =====================================
-// writePassword();
